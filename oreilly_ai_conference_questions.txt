@@ -1,0 +1,107 @@
+Oreilly AI Conference Questions
+-------------------------------
+
+Input data:
+* Where does the data come from?
+* How much history do you have?
+* What is the resolution of your data?
+* Are there any large gaps or outages in your data?
+* What kind of sanity checking, cleaning, and outlier detection/removal do you do?
+* How do you check for changes in the data format? How many times has that happened?
+* What is the biggest source of noise in the data?
+* Who else has access to the same data?
+* Has anyone used data like yours to solve a problem like yours?
+* How much “human curation” is in your data?
+* What filtering is in place?
+* How is the data stored?
+* Are there sporadic performance-effecting latencies in your data arrival?
+* Can you give me specific examples of what your data actually is?
+* Do you believe there is systematic noise in your data somehow? How do you correct for it?
+
+Features:
+* How do you represent features in your system?
+* How often do you add/change/remove features?
+* Can you give me three concrete examples of features that are currently live in your system?
+* How much human domain knowledge is imbedded in your features?
+* Do you normalize/transform your features somehow?
+* How do you handle heterogenous data sources?
+* Roughly, how many features do you use?
+* (If feature selection, dimensionality reduction, etc. methods are used)
+  * Why were these methods chosen?
+  * What effect do they have on the system’s overall performance?
+  * Why do these features make sense for the decisions you want to make?
+
+Predictor:
+* What is the meaning of the prediction output?
+* What type of representation do you use to go from features to a prediction?
+* On what timescales is your system outputting predictions?
+* How does your system quantify its uncertainty in a prediction?
+* Why did you chose that representation from the many, many of other methods?
+* What alternate methods did you try? Why were those passed on?
+* How much human domain knowledge is imbedded in your prediction representation?
+* Do you explicitly regularize or measure/control the complexity your representation somehow?
+* What are other successful applications of your chosen representation?
+* Why does your predictor representation make sense for the decisions you want to make?
+* If more than one predictor (for example, using ensembles):
+  * Roughly how many models do you use?
+  * Do you find most of your performance comes from a few of the models?
+  * How do you validate that you increase performance by adding additional models?
+
+Decision making:
+* What is the meaning of the decisions you are making?
+* On what timescales is your system outputting decisions?
+* What type of representation do you use to go from a prediction to a decision?
+* What alternate methods did you try? Why were those passed on?
+* How much human domain knowledge is imbedded in your decision making representation?
+* How does your system quantify its uncertainty in a prediction?
+* Why does your decision making representation make sense for the decisions you want to make?
+
+Training:
+* What parts of your system “learn” from data?
+* Where do your labels come from? How accurate are they?
+* How much human domain knowledge is in the fitting process?
+* What is the rough ratio of (# data points)/(# features)?
+* What objective function do you use? Why? How did it come about? How much tuning was involved?
+* Roughly what order of magnitude of parameters are you fitting?
+* What are alterative objective functions you have tried?
+* How do you actually perform the fitting/learning/search/optimization?
+* What alternative optimization techniques have you previously tried? Why were those insufficient?
+* How do you understand if your system is overfitting/underfitting?
+* How often do you re-fit your representations? How much does that increase your performance?
+
+Performance testing:
+* How do you test the performance of your overall system?
+* How do you test the performance of single components of your system (e.g., the decision making)?
+* Exactly how large is your train/test/holdout sets? How are they kept separate?
+* What assumptions is your overall approach making? How have you validated these assumptions hold?
+* What are the metrics you use to measure performance across your system?
+* What is your overall performance? With confidences.
+* How do common baseline methods perform on your problem? With performance and confidences.
+* Can you explain a couple situations of both unexpectedly high and low performance?
+* What do you believe is the maximum achievable performance? Why?
+* How have the dynamics of your data/problem changed over time?
+* How much do your estimated and live performances differ? What are the sources of these differences? How do you represent and compensate for them?
+* Do you validate against simulated data where you know your assumptions hold? How is the simulated data generated?
+* Does your performance make intuitive sense to you? Why or why not?
+
+Monitoring for performance changes:
+* How are you monitoring for performance changes?
+* How often do you expect to detect changes in performance?
+* Do you have methods for early-detection of performance changes for each individual component before it shows up in overall performance?
+* When has your monitoring caught a change in performance?
+* How do you think about the difference between an anomalous environmental condition and a change in performance?
+
+Research process:
+* Describe your overall research philosophy
+* For any change that is made to the overall system (method, implementation, etc), what is the process that validate and approves the change?
+* How often is the methodology or a component of the system changed?
+* Who has access to the entire data set? What policies are in place to prevent data snooping?
+* What change made it through your validation process that turned out to decrease performance? Why did that happen? How was your process changed to prevent this from happening again in the future?
+* What is the likely next research piece to make it into production?
+* What roles comprise your research team? Why?
+* How do you allocate time across your team?
+* What part of your system keeps you up at night? Why?
+* What has worked much better/worse than you had expected?
+* How is your live system influencing/corrupting your future data? How are you correcting for that?
+* What other data sources have you investigated?
+* How closely does your in-sample data represent your out-of-sample?
